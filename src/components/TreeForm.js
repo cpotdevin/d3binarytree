@@ -45,11 +45,17 @@ class TreeForm extends React.Component {
     let input = null;
     if (this.state.inputFile) {
       input = (
-        <input type='file' name='input-data' />
+        <div>
+          <label htmlFor='file-input'>JSON File: </label>
+          <input id='file-input' type='file' name='input-data' />
+        </div>
       );
     } else {
       input = (
-        <input type='text' name='input-data' />
+        <div>
+          <label htmlFor='url-input'>JSON Url: </label>
+          <input id='url-input' type='text' name='input-data' />
+        </div>
       );
     }
 
