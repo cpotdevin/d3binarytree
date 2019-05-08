@@ -1,0 +1,11 @@
+#tree-form {
+  border: 1px solid grey;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+#tree-form h2 {
+  margin: 10px;
+}
