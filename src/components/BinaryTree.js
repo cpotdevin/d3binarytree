@@ -1,4 +1,5 @@
 import React from 'react';
+import './BinaryTree.css';
 
 class BinaryTree extends React.Component {
   render() {
