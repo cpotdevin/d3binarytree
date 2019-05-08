@@ -1,9 +1,9 @@
 import React from 'react';
-import './TreeForm.css';
+import './Form.css';
 
 class TreeForm extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       inputFile: true
     }
@@ -16,12 +16,14 @@ class TreeForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const input = event.target['input-data'];
-    if (this.state.inputFile) {
-      const file = input.files[0];
-      this.readFileJSON(file);
-    } else {
-      const url = input.value;
-      this.readUrlJSON(url);
+    if (input.value.trim()) {
+      if (this.state.inputFile) {
+        const file = input.files[0];
+        this.readFileJSON(file);
+      } else {
+        const url = input.value;
+        this.readUrlJSON(url);
+      }
     }
   }
 
