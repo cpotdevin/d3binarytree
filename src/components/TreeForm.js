@@ -1,6 +1,5 @@
 import React from 'react';
 import './TreeForm.css';
-import { async } from 'q';
 
 class TreeForm extends React.Component {
   constructor() {
