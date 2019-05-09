@@ -8,11 +8,14 @@ import './Canvas.css';
 
 class Canvas extends React.Component {
   startNewTree = (data) => {
-    this.refs['binaryTree'].startNewTree(data);
+    this.refs['binaryTree'].clearTree();
+    this.addNewNodes(data.map(node => node.value));
   }
 
   addNewNodes = (values) => {
-    values.forEach(value => this.refs['binaryTree'].addNewNode(value));
+    values.forEach((value, index) => {
+      setTimeout(() => this.refs['binaryTree'].addNewNode(value), 200*index);
+    });
   }
 
   clearTree = () => {
