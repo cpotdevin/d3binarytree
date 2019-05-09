@@ -4,9 +4,9 @@ import './Form.css';
 class NodeForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
-    const value = event.target['node-value'].value;
+    const value = Number(event.target['node-value'].value);
     if (value !== '') {
-      this.props.addNewNode(Number(value));
+      this.props.addNewNodes([value]);
     }
   }
 
