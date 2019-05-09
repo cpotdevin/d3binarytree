@@ -45,7 +45,7 @@ class RandomizeForm extends React.Component {
             name='max-random-value' />
         </div>
 
-        <input type='submit' value='Submit' />
+        <input type='submit' value='Add' />
       </form>
     );
   }

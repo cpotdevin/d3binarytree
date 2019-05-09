@@ -22,7 +22,7 @@ class NodeForm extends React.Component {
             name='node-value' />
         </div>
 
-        <input type='submit' value='Submit' />
+        <input type='submit' value='Add' />
       </form>
     );
   }

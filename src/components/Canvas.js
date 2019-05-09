@@ -3,6 +3,7 @@ import BinaryTreeCanvas from './BinaryTreeCanvas';
 import TreeForm from './TreeForm';
 import NodeForm from './NodeForm';
 import RandomizeForm from './RandomizeForm';
+import ClearForm from './ClearForm';
 import './Canvas.css';
 
 class Canvas extends React.Component {
@@ -14,6 +15,10 @@ class Canvas extends React.Component {
     values.forEach(value => this.refs['binaryTree'].addNewNode(value));
   }
 
+  clearTree = () => {
+    this.refs['binaryTree'].clearTree();
+  }
+
   render() {
     return (
       <div id='app-view'>
@@ -21,6 +26,7 @@ class Canvas extends React.Component {
         <TreeForm startNewTree={this.startNewTree} />
         <NodeForm addNewNodes={this.addNewNodes} />
         <RandomizeForm addNewNodes={this.addNewNodes} />
+        <ClearForm clearTree={this.clearTree} />
       </div>
     );
   }

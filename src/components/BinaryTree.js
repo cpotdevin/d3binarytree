@@ -28,7 +28,7 @@ class BinaryTree {
       .attr('transform', `translate(${WIDTH/2}, ${PADDING})`);
   }
 
-  restartTree() {
+  clearTree() {
     this.svg.selectAll('*').remove();
     this.startTree();
   }
