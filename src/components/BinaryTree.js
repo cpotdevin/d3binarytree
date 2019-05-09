@@ -11,6 +11,10 @@ class BinaryTree {
       .attr('width', WIDTH)
       .attr('height', HEIGHT);
 
+    this.startTree();
+  }
+
+  startTree() {
     this.branches = this.svg.append('g')
       .attr('id', 'branches')
       .attr('transform', `translate(${WIDTH/2}, ${PADDING})`);
@@ -24,7 +28,16 @@ class BinaryTree {
       .attr('transform', `translate(${WIDTH/2}, ${PADDING})`);
   }
 
+  restartTree() {
+    this.svg.selectAll('*').remove();
+    this.startTree();
+  }
+
   addNode(node) {
+    this.nodes.append('circle').attr('r', 10)
+      .attr('cx', node.x)
+      .attr('cy', node.y);
+
     if (node.parent) {
       this.branches.append('line')
         .attr('x1', node.parent.x)
@@ -32,10 +45,6 @@ class BinaryTree {
         .attr('x2', node.x)
         .attr('y2', node.y);
     }
-
-    this.nodes.append('circle').attr('r', 20)
-      .attr('cx', node.x)
-      .attr('cy', node.y);
 
     this.text.append('text')
       .text(node.value)

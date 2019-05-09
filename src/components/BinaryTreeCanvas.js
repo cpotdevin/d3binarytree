@@ -24,7 +24,12 @@ class BinaryTreeCanvas extends React.Component {
   }
 
   startNewTree(data) {
-    console.log(data);
+    this.BinaryTree.restartTree();
+    this.root = null;
+
+    data.forEach(node => {
+      this.addNewNode(node.value);
+    });
   }
 
   addNewNode(value) {
