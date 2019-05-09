@@ -6,7 +6,7 @@ class NodeForm extends React.Component {
     event.preventDefault();
     const value = event.target['node-value'].value;
     if (value !== '') {
-      this.props.addNewNode(value);
+      this.props.addNewNode(Number(value));
     }
   }
 

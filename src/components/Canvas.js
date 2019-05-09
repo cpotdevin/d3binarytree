@@ -1,22 +1,22 @@
 import React from 'react';
-import BinaryTree from './BinaryTree';
+import BinaryTreeCanvas from './BinaryTreeCanvas';
 import TreeForm from './TreeForm';
 import NodeForm from './NodeForm';
 import './Canvas.css';
 
 class Canvas extends React.Component {
   startNewTree = (data) => {
-    console.log(data);
+    this.refs['binaryTree'].startNewTree(data);
   }
 
   addNewNode = (value) => {
-    console.log(value);
+    this.refs['binaryTree'].addNewNode(value);
   }
 
   render() {
     return (
       <div id='app-view'>
-        <BinaryTree />
+        <BinaryTreeCanvas ref='binaryTree' />
         <TreeForm startNewTree={this.startNewTree} />
         <NodeForm addNewNode={this.addNewNode} />
       </div>
